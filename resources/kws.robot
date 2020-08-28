@@ -41,3 +41,15 @@ Então devo ver mensagens informando que os campos do cadastro de clientes são 
     Wait Until Page Contains    CPF é obrigatório           5
     Wait Until Page Contains    Endereço é obrigatório      5
     Wait Until Page Contains    Telefone é obrigatório      5
+
+Então devo ver a mensagem de que o campo Nome é obrigatório
+    Wait Until Page Contains    Nome é obrigatório          5
+
+Então devo ver a mensagem de que o campo CPF é obrigatório
+    Wait Until Page Contains    CPF é obrigatório           5
+
+Então devo ver a mensagem de que o campo Endereço é obrigatório
+    Wait Until Page Contains    Endereço é obrigatório      5
+
+Então devo ver a mensagem de que o campo Telefone é obrigatório
+    Wait Until Page Contains    Telefone é obrigatório      5
