@@ -33,6 +33,10 @@ Telefone é obrigatório
     [Template]      Validação de Campos
     João de Teste    00000000565    Rua dos Bugs, 1000        ${EMPTY}      Telefone é obrigatório
 
+Telefone incorreto
+    [Template]      Validação de Campos
+    Beltrano de Teste    00000000565    Rua dos Bugs, 1000  2199999999      Telefone inválido
+
 ***Keywords***
 
 Validação de Campos
