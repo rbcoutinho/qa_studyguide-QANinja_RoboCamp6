@@ -59,3 +59,26 @@ Então devo ver mensagens informando que os campos do cadastro de clientes são 
 Então devo ver o texto:
     [Arguments]     ${expect_text}
     Wait Until Page Contains    ${expect_text}              5
+
+#Equipos
+Dado que acesso o formulário de cadastro de equipamentos
+    Wait Until Element Is Visible   ${NAV_EQUIPOS}      5
+    Click Element                   ${NAV_EQUIPOS}
+    Wait Until Element Is Visible   ${EQUIPOS_FORM}     5
+    Click Element                   ${EQUIPOS_FORM}
+
+E que tenho o seguinte equipamento:   
+    [Arguments]     ${equipo-name}     ${daily_price}
+
+    Remove Equipo By Name       ${equipo-name}
+
+    Set Test Variable           ${equipo-name}
+    Set Test Variable           ${daily_price}
+
+Quando faço a inclusão desse equipamento
+    Register New Equipo  ${equipo-name}  ${daily_price}
+
+Então devo ver a mensagem:
+    [Arguments]     ${expect_notice}
+
+    Wait Until Element Contains     ${TOASTER_SUCCESS}      ${expect_notice}    5

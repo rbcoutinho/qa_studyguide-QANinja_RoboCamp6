@@ -41,3 +41,10 @@ def remove_customer_by_cpf(cpf):
     print(query)
 
     execute_q(query)
+
+def remove_equipo_by_name(equiponame):
+
+    query = "delete from public.equipos where name = '{}';".format(equiponame)
+    print(query)
+
+    execute_q(query)
