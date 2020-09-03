@@ -12,6 +12,14 @@ Novo cliente
     Quando faço a inclusão desse cliente    
     Então devo ver a notificação:   Cliente cadastrado com sucesso!
 
+Cliente Duplicado
+    Dado que acesso o formulário de cadastro de clientes
+    E que eu tenho o seguinte cliente:
+    ...     Siclano de Teste    00000000567     Rua dos Bugs, 2000      21999999998
+    Mas esse cpf já existe no sistema
+    Quando faço a inclusão desse cliente    
+    Então devo ver a notificação de erro:   Este CPF já existe no sistema!
+
 Campos Obrigatórios
     Dado que acesso o formulário de cadastro de clientes
     E que eu tenho o seguinte cliente:

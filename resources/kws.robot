@@ -15,7 +15,7 @@ Devo ver a área logada
 Devo ver um toaster com a mensagem
     [Arguments]     ${expect_message}
 
-    Wait Until Element Contains     ${TOASTER_ERROR}   ${expect_message}
+    Wait Until Element Contains     ${TOASTER_ERROR_P}   ${expect_message}
 
 #Customers
 Dado que acesso o formulário de cadastro de clientes
@@ -34,13 +34,21 @@ E que eu tenho o seguinte cliente:
     Set Test Variable   ${address}
     Set Test Variable   ${phone_number}
 
+Mas esse cpf já existe no sistema
+    Insert Customer     ${name}     ${cpf}      ${address}      ${phone_number}
+
 Quando faço a inclusão desse cliente
     Register New Customer  ${name}  ${cpf}  ${address}  ${phone_number}
 
 Então devo ver a notificação:
     [Arguments]     ${expect_notice}
 
-    Wait Until Element Contains     ${TOASTER_SUCCESS}    ${expect_notice}    5
+    Wait Until Element Contains     ${TOASTER_SUCCESS}      ${expect_notice}    5
+
+Então devo ver a notificação de erro:
+    [Arguments]     ${expect_notice}
+
+    Wait Until Element Contains     ${TOASTER_ERROR}        ${expect_notice}    5
 
 Então devo ver mensagens informando que os campos do cadastro de clientes são obrigatórios
     Wait Until Element Contains     ${LABEL_NAME}         Nome é obrigatório          5
