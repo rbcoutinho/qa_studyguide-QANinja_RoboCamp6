@@ -1,6 +1,6 @@
 ***Settings***
 Documentation       Login
-Resource    ../resources/base.robot
+Resource    ../../resources/base.robot
 Test Template   Tentativa de login
 #executa uma ou mais Keywords somente uma vez antes de todos os  caso de teste.
 Suite Setup          Start Session
