@@ -4,7 +4,8 @@ Documentation       Representação da página equipamentos com seus elementos e
 ***Variables***
 ${EQUIPOS_FORM}             css:a[href$=register]
 ${LABEL_EQUIPO}             css:label[for=equipo-name]        
-${LABEL_PRICE}              css:label[for=daily_price] 
+${LABEL_PRICE}              css:label[for=daily_price]
+${BUTTON_CADASTRAR}         xpath://button[text()="CADASTRAR"]
 
 ***Keywords***
 Register New Equipo
@@ -13,4 +14,4 @@ Register New Equipo
     Input Text      id:equipo-name             ${equipo-name}
     Input Text      id:daily_price             ${daily_price}
 
-    Click Element   xpath://button[text()="CADASTRAR"]
+    Click Element   ${BUTTON_CADASTRAR} 

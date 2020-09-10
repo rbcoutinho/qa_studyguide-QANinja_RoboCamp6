@@ -48,3 +48,11 @@ def remove_equipo_by_name(equiponame):
     print(query)
 
     execute_q(query)
+
+def insert_equipos(name, daily_price):
+
+    query = "insert into public.equipos(name, daily_price) "\
+	    "values ('Pandeiro', '22');"
+    print(query)
+
+    execute_q(query)

@@ -75,6 +75,9 @@ E que tenho o seguinte equipamento:
     Set Test Variable           ${equipo-name}
     Set Test Variable           ${daily_price}
 
+Mas esse equipamento já existe no sistema 
+    Insert Equipos     ${equipo-name}     ${daily_price}
+
 Quando faço a inclusão desse equipamento
     Register New Equipo  ${equipo-name}  ${daily_price}
 
@@ -82,3 +85,12 @@ Então devo ver a mensagem:
     [Arguments]     ${expect_notice}
 
     Wait Until Element Contains     ${TOASTER_SUCCESS}      ${expect_notice}    5
+
+Então devo ver a notificação de erro de duplicidade:
+    [Arguments]     ${expect_notice}
+
+    Wait Until Element Contains     ${TOASTER_ERROR_P}        ${expect_notice}    5
+
+Então devo ver mensagens informando que os campos de equipamentos são obrigatórios
+    Wait Until Element Contains     ${LABEL_EQUIPO}         Nome do equipo é obrigatório          10
+    Wait Until Element Contains     ${LABEL_PRICE}          Diária do equipo é obrigatória        10
