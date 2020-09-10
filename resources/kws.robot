@@ -1,6 +1,6 @@
 ***Keywords***
 
-#Login
+# Login
 Acesso a página Login
     Go to           ${base_url}
 
@@ -17,10 +17,9 @@ Devo ver um toaster com a mensagem
 
     Wait Until Element Contains     ${TOASTER_ERROR_P}   ${expect_message}
 
-#Customers
+# Customers
 Dado que acesso o formulário de cadastro de clientes
-    Wait Until Element Is Visible   ${NAV_CUSTOMERS}      5
-    Click Element                   ${NAV_CUSTOMERS}
+    Go To Customers
     Wait Until Element Is Visible   ${CUSTOMERS_FORM}       5
     Click Element                   ${CUSTOMERS_FORM}
 
@@ -60,7 +59,7 @@ Então devo ver o texto:
     [Arguments]     ${expect_text}
     Wait Until Page Contains    ${expect_text}              5
 
-#Equipos
+# Equipos
 Dado que acesso o formulário de cadastro de equipamentos
     Wait Until Element Is Visible   ${NAV_EQUIPOS}      5
     Click Element                   ${NAV_EQUIPOS}
@@ -94,3 +93,22 @@ Então devo ver a notificação de erro de duplicidade:
 Então devo ver mensagens informando que os campos de equipamentos são obrigatórios
     Wait Until Element Contains     ${LABEL_EQUIPO}         Nome do equipo é obrigatório          10
     Wait Until Element Contains     ${LABEL_PRICE}          Diária do equipo é obrigatória        10
+
+# Remove Customer
+Dado que eu tenho um cliente indesejado:
+    [Arguments]                 ${name}     ${cpf}      ${address}      ${phone_number}
+
+    Remove Customer By CPF                  ${cpf}
+    Insert Customer             ${name}     ${cpf}      ${address}      ${phone_number}
+
+    Set Test Variable                       ${cpf}
+
+E acesso a lista de clientes
+    Go To Customers
+
+Quando eu removo esse cliente
+    #Format CPF é a Keyword que representa o método no arquivo db.py
+    ${cpf_formatado}=           Format cpf      ${cpf}
+
+    Go To Customer Details      ${cpf_formatado}
+    Click Remove Customer

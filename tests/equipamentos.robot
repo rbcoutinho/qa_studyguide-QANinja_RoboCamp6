@@ -5,7 +5,6 @@ Suite Setup          Login Session
 Suite Teardown       Finish Session
 
 ***Test Cases***
-# Equipamento duplicado
 Novo Equipamento
     Dado que acesso o formulário de cadastro de equipamentos
     E que tenho o seguinte equipamento:
