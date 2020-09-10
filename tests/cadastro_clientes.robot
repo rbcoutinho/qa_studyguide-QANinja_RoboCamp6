@@ -11,6 +11,7 @@ Novo cliente
     ...     João de Teste       00000000565     Rua dos Bugs, 1000      21999999999
     Quando faço a inclusão desse cliente    
     Então devo ver a notificação:   Cliente cadastrado com sucesso!
+    E esse cliente deve ser exibido na lista
 
 Campos Obrigatórios
     Dado que acesso o formulário de cadastro de clientes

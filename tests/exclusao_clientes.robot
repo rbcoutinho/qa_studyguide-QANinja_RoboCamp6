@@ -11,5 +11,6 @@ Remover Cliente
     E acesso a lista de clientes
     Quando eu removo esse cliente
     Então devo ver a notificação:   Cliente removido com sucesso!
+    E esse cliente não deve aparecer na lista
 
 

@@ -11,6 +11,7 @@ Novo Equipamento
     ...     Guitarra       75,00     
     Quando faço a inclusão desse equipamento    
     Então devo ver a mensagem:   Equipo cadastrado com sucesso!
+    E esse equipamento deve ser exibido na lista
 
 Campos obrigatórios
     Dado que acesso o formulário de cadastro de equipamentos

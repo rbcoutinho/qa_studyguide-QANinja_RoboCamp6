@@ -7,6 +7,7 @@ ${LABEL_NAME}           css:label[for=name]
 ${LABEL_CPF}            css:label[for=cpf]         
 ${LABEL_ADDRESS}        css:label[for=address]     
 ${LABEL_PHONE}          css:label[for=phone_number]
+${CUSTOMER_LIST}        css:table
 
 ***Keywords***
 Register New Customer

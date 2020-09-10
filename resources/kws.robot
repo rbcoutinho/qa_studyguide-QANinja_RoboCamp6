@@ -59,6 +59,13 @@ Então devo ver o texto:
     [Arguments]     ${expect_text}
     Wait Until Page Contains    ${expect_text}              5
 
+E esse cliente deve ser exibido na lista
+    ${cpf_formatado}=           Format cpf      ${cpf}
+
+    Go Back
+    Wait Until Element Is Visible   ${CUSTOMER_LIST}       5
+    Table Should Contain            ${CUSTOMER_LIST}       ${cpf_formatado}
+
 # Equipos
 Dado que acesso o formulário de cadastro de equipamentos
     Wait Until Element Is Visible   ${NAV_EQUIPOS}      5
@@ -94,6 +101,11 @@ Então devo ver mensagens informando que os campos de equipamentos são obrigat�
     Wait Until Element Contains     ${LABEL_EQUIPO}         Nome do equipo é obrigatório          10
     Wait Until Element Contains     ${LABEL_PRICE}          Diária do equipo é obrigatória        10
 
+E esse equipamento deve ser exibido na lista
+    Go Back
+    Wait Until Element Is Visible   css:table       5
+    Table Should Contain            css:table       ${equipo-name}
+
 # Remove Customer
 Dado que eu tenho um cliente indesejado:
     [Arguments]                 ${name}     ${cpf}      ${address}      ${phone_number}
@@ -109,6 +121,10 @@ E acesso a lista de clientes
 Quando eu removo esse cliente
     #Format CPF é a Keyword que representa o método no arquivo db.py
     ${cpf_formatado}=           Format cpf      ${cpf}
+    Set Test Variable           ${cpf_formatado}
 
     Go To Customer Details      ${cpf_formatado}
     Click Remove Customer
+
+E esse cliente não deve aparecer na lista
+    Wait Until Page Does Not Contain   ${cpf_formatado}
