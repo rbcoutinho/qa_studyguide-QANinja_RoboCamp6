@@ -6,7 +6,7 @@ Library         OperatingSystem
 ***Test Cases***
 New Customer
 
-    ${payload}=          Get Json           customers/aloha.jsons
+    ${payload}=          Get Json           customers/aloha.json
     
     Delete Customer    ${payload['cpf']}
 
