@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stages('API Test') {
+        stage('API Test') {
             steps {
                 sh 'robot -d ./logs tests/api'
             }
