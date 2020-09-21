@@ -18,6 +18,11 @@ pipeline {
                 sh 'robot -d ./logs tests/api'               
             }
         }
+        stage('UI Tests') {
+            steps {
+                sh 'robot -d ./logs tests/web'
+            }
+        }
     }
     post {
         always {
