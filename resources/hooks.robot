@@ -1,10 +1,10 @@
 ***Keywords***
 Start Session
     Run Keyword If      "${browser}" == "headless"
-    ...     Open Chrome Headless
+    ...     Open Firefox Headless
 
-    Run Keyword If      "${browser}" == "chrome" 
-    ...     Open Chrome
+    Run Keyword If      "${browser}" == "firefox" 
+    ...     Open Firefox
 
     Set Window Size     1440    900
 
@@ -20,8 +20,8 @@ Login Session
     Login With      ${admin_user}  ${admin_pass}
 
 ### Webdriver
-Open Chrome Headless
-    Open Browser    about:blank        headlesschrome      options=add_argument('--disable-dev-shm-usage')
+Open Firefox Headless
+    Open Browser    about:blank        headlessfirefox      options=add_argument('--disable-dev-shm-usage')
 
-Open Chrome
-    Open Browser      about:blank        chrome
+Open Firefox
+    Open Browser      about:blank        firefox
