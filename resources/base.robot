@@ -8,9 +8,9 @@ Resource    hooks.robot
 
 Resource    components/Sidebar.robot
 Resource    components/Toaster.robot
-Resource    pages/LoginPage.robot
-Resource    pages/CustomersPage.robot
-Resource    pages/EquiposPage.robot
+Resource    Pages/LoginPage.robot
+Resource    Pages/CustomersPage.robot
+Resource    Pages/EquiposPage.robot
 
 ***Variables***
 
