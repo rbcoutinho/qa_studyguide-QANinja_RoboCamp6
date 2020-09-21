@@ -6,6 +6,7 @@ Test Template   Tentativa de login
 Suite Setup          Start Session
 # executa uma ou mais Keywords uma única vez após finalizar todos os caso de teste.
 Suite Teardown       Finish Session
+Test Teardown        Finish TestCase
 
 ***Keywords***
 Tentativa de login
