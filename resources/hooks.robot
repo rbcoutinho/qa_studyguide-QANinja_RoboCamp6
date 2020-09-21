@@ -1,3 +1,6 @@
+***Variables***
+${browser}=         firefox
+
 ***Keywords***
 Start Session
     Run Keyword If      "${browser}" == "headless"
