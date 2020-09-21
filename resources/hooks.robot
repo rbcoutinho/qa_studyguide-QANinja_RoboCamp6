@@ -24,7 +24,7 @@ Login Session
 
 ### Webdriver
 Open Firefox Headless
-    Open Browser    about:blank        headlessfirefox      options=add_argument('--disable-dev-shm-usage')
+    Open Browser    about:blank        headlessfirefox      #options=add_argument('--disable-dev-shm-usage')
 
 Open Firefox
     Open Browser      about:blank        firefox
