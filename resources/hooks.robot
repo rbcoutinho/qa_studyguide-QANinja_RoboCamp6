@@ -1,13 +1,13 @@
 ***Variables***
-${browser}=         firefox
+${browser}=         chrome
 
 ***Keywords***
 Start Session
     Run Keyword If      "${browser}" == "headless"
-    ...     Open Firefox Headless
+    ...     Open Chrome Headless
 
-    Run Keyword If      "${browser}" == "hlfox" 
-    ...     Open Firefox
+    Run Keyword If      "${browser}" == "chrome" 
+    ...     Open Chrome
 
     Set Window Size     1440    900
 
@@ -23,8 +23,8 @@ Login Session
     Login With      ${admin_user}  ${admin_pass}
 
 ### Webdriver
-Open Firefox Headless
-    Open Browser    about:blank        headlessfirefox
+Open Chrome Headless
+    Open Browser    about:blank        headlesschrome       options=add_argument('--disable-dev-shm-usage')
 
-Open Firefox
-    Open Browser      about:blank        firefox
+Open Chrome
+    Open Browser      about:blank        chrome
