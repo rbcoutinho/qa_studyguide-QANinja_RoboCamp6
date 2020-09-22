@@ -3,10 +3,10 @@ ${browser}=         firefox
 
 ***Keywords***
 Start Session
-    Run Keyword If      "${browser}" == "hlfox"
+    Run Keyword If      "${browser}" == "headless"
     ...     Open Firefox Headless
 
-    Run Keyword If      "${browser}" == "firefox" 
+    Run Keyword If      "${browser}" == "hlfox" 
     ...     Open Firefox
 
     Set Window Size     1440    900
