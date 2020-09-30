@@ -1,0 +1,15 @@
+datasources:79d93f208117ce2afebca18d5105aa7895e7facc
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
+suitesfrom:no-suites-from-option
+file:bf32e4e1d358002fb09f1634ac1587dc9818faef
+--suite Tests.Api.Customers.Delete Customers
+--suite Tests.Api.Customers.Get Customers
+--suite Tests.Api.Customers.Post Customers
+--suite Tests.Api.Customers.Put Customers
+--suite Tests.Api.Sessions.Post Sessions
+--suite Tests.Web.Cadastro Clientes
+--suite Tests.Web.Contrato
+--suite Tests.Web.Equipamentos
+--suite Tests.Web.Exclusao Clientes
+--suite Tests.Web.Login
+--suite Tests.Web.Login Tentativa
